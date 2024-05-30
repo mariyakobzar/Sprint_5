@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.options import Options
 
 from helpers import Helpers
 from locators import TestLocators
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
