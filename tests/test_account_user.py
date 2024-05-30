@@ -2,6 +2,8 @@ import time
 import random
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+from helpers import Helpers
 from locators import TestLocators
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -9,18 +11,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class TestAccountEntrance():
 
-    def create_random_password(self):
-        password = random.randint(100000, 999999)
-        return password
-
-    def create_random_email(self):
-        number = random.randint(000000, 999999)
-        email = f'mariakobzar_{number}@gmail.com'
-        return email
-
     def test_account_entrance(self):
-        email = self.create_random_email()
-        password = str(self.create_random_password())
+        email = Helpers.create_random_email()
+        password = str(Helpers.create_random_password())
         options = Options()
         options.add_argument('--window-size=1920,1080')
         driver = webdriver.Chrome(options=options)
