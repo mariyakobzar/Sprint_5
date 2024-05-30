@@ -35,6 +35,5 @@ class TestConstructorEntrance():
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
         driver.find_element(*TestLocators.SEARCH_CONSTRUCTOR).click()
-        WebDriverWait(driver, 3).until(
-            expected_conditions.presence_of_element_located(TestLocators.SEARCH_HEADER_CONSTRUCTOR))
+        assert driver.find_element(*TestLocators.SEARCH_HEADER_CONSTRUCTOR).text == "Соберите бургер"
         driver.quit()

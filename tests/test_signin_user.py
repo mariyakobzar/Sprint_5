@@ -37,6 +37,7 @@ class TestSignIn():
         driver.find_element(*TestLocators.SEARCH_ACCOUNT).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
+        assert driver.find_element(*TestLocators.SEARCH_PROFILE).text == "Профиль"
         driver.quit()
 
     def test_signin_user_from_enter_account(self):
@@ -67,6 +68,7 @@ class TestSignIn():
         driver.find_element(*TestLocators.SEARCH_ACCOUNT).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
+        assert driver.find_element(*TestLocators.SEARCH_PROFILE).text == "Профиль"
         driver.quit()
 
 
@@ -95,6 +97,7 @@ class TestSignIn():
         driver.find_element(*TestLocators.SEARCH_ACCOUNT).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
+        assert driver.find_element(*TestLocators.SEARCH_PROFILE).text == "Профиль"
         driver.quit()
 
 
@@ -125,4 +128,5 @@ class TestSignIn():
         driver.find_element(*TestLocators.SEARCH_ACCOUNT).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
+        assert driver.find_element(*TestLocators.SEARCH_PROFILE).text == "Профиль"
         driver.quit()

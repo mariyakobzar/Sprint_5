@@ -10,13 +10,6 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 class TestLogout():
-    def create_random_password(self):
-        password = random.randint(100000, 999999)
-        return password
-    def create_random_email(self):
-        number = random.randint(000000, 999999)
-        email = f'mariakobzar_{number}@gmail.com'
-        return email
 
 
     def test_account_logout(self):
@@ -43,4 +36,5 @@ class TestLogout():
         driver.find_element(*TestLocators.SEARCH_EXIT_ACCOUNT).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_ENTRANCE))
+        assert driver.find_element(*TestLocators.SEARCH_ENTRANCE).text == "Вход"
         driver.quit()

@@ -25,6 +25,5 @@ class TestLoginError():
         driver.find_element(*TestLocators.SEARCH_EMAIL).send_keys(email)
         driver.find_element(*TestLocators.SEARCH_PASSWORD).send_keys(password)
         driver.find_element(*TestLocators.SEARCH_BUTTON_REGISTER).click()
-        WebDriverWait(driver, 3).until(
-            expected_conditions.presence_of_element_located(TestLocators.SEARCH_INPUT_ERROR))
+        assert driver.find_element(*TestLocators.SEARCH_INPUT_ERROR).text == "Некорректный пароль"
         driver.quit()

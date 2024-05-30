@@ -31,6 +31,5 @@ class TestAccountEntrance():
         driver.find_element(*TestLocators.SEARCH_ENTER).click()
         driver.find_element(*TestLocators.SEARCH_LOGO).click()
         driver.find_element(*TestLocators.SEARCH_ACCOUNT).click()
-        WebDriverWait(driver, 3).until(
-            expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
+        assert driver.find_element(*TestLocators.SEARCH_PROFILE).text == "Профиль"
         driver.quit()
