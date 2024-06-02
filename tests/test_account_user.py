@@ -13,10 +13,6 @@ class TestAccountEntrance():
     def test_account_entrance(self, driver):
         email = Helpers.create_random_email()
         password = str(Helpers.create_random_password())
-        #options = Options()
-        #options.add_argument('--window-size=1920,1080')
-        #driver = webdriver.Chrome(options=options)
-        #driver.get("https://stellarburgers.nomoreparties.site/")
         driver.find_element(*TestLocators.SEARCH_ACCOUNT).click()
         driver.find_element(*TestLocators.SEARCH_REGISTRATION).click()
         driver.find_element(*TestLocators.SEARCH_NAME).send_keys('Maria')
@@ -33,4 +29,3 @@ class TestAccountEntrance():
         WebDriverWait(driver, 3).until(
             expected_conditions.presence_of_element_located(TestLocators.SEARCH_PROFILE))
         assert driver.find_element(*TestLocators.SEARCH_PROFILE).text == "Профиль"
-        #driver.quit()
